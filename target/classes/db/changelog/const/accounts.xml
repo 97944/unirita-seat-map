@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+	http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<changeSet author="r.ninomiya" id="accounts-const">
+		<preConditions onFail="MARK_RAN" onFailMessage="skip accounts-const">
+			<not>
+				<tableExists tableName="ACCOUNTS" />
+			</not>
+		</preConditions>
+		<createTable tableName="ACCOUNTS">
+			<column name="ID" type="VARCHAR(255)">
+				<constraints primaryKey="true" />
+			</column>
+			<column name="NAME" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="PASSWORD" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="ADMIN" type="BOOLEAN"  defaultValueBoolean="false">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+</databaseChangeLog>
