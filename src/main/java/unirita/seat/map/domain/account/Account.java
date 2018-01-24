@@ -1,5 +1,6 @@
 package unirita.seat.map.domain.account;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -12,6 +13,7 @@ public class Account {
 	private String password;
 	private boolean admin;
 
+	@Column(name = "ID", unique = true, nullable = false)
 	public String getId(){
 		return id;
 	}
@@ -20,6 +22,7 @@ public class Account {
 		this.id = id;
 	}
 
+	@Column(name = "NAME", nullable = false)
 	public String getName(){
 		return name;
 	}
@@ -28,6 +31,7 @@ public class Account {
 		this.name = name;
 	}
 
+	@Column(name = "PASSWORD", nullable = false)
 	public String getPassword(){
 		return password;
 	}
@@ -36,6 +40,7 @@ public class Account {
 		this.password = password;
 	}
 
+	@Column(name = "ADMIN")
 	public boolean getAdmin(){
 		return admin;
 	}
