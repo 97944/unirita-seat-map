@@ -2,6 +2,7 @@ package unirita.seat.map.domain.account;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @SuppressWarnings("serial")
@@ -13,6 +14,7 @@ public class Account {
 	private String password;
 	private boolean admin;
 
+	@Id
 	@Column(name = "ID", unique = true, nullable = false)
 	public String getId(){
 		return id;
