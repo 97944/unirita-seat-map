@@ -6,3 +6,4 @@ target/
 *.project
 *.classpath
 .project/
+src/.vscode/launch.json
