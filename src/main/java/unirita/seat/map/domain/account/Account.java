@@ -10,8 +10,10 @@ import javax.persistence.Table;
 @Table(name = "accounts")
 public class Account {
 	private String id;
-	private String name;
-	private String password;
+	private String familyName;
+	private String givenName;
+	private String familyNameKana;
+	private String givenNameKana;
 	private boolean admin;
 
 	@Id
@@ -24,22 +26,40 @@ public class Account {
 		this.id = id;
 	}
 
-	@Column(name = "NAME", nullable = false)
-	public String getName(){
-		return name;
+	@Column(name = "FAMILY_NAME", nullable = false)
+	public String getFamilyName(){
+		return familyName;
 	}
 
-	public void setName(String name){
-		this.name = name;
+	public void setFamilyName(String familyName){
+		this.familyName = familyName;
 	}
 
-	@Column(name = "PASSWORD", nullable = false)
-	public String getPassword(){
-		return password;
+	@Column(name = "GIVEN_NAME", nullable = false)
+	public String getGivenName(){
+		return givenName;
 	}
 
-	public void setPassword(String password){
-		this.password = password;
+	public void setGivenName(String givenName){
+		this.givenName = givenName;
+	}
+
+	@Column(name = "FAMILY_NAME_KANA", nullable = false)
+	public String getFamilyNameKana(){
+		return givenNameKana;
+	}
+
+	public void setGivenNameKana(String givenNameKana){
+		this.givenNameKana = givenNameKana;
+	}
+
+	@Column(name = "GIVEN_NAME_KANA", nullable = false)
+	public String getGivenNameKana(){
+		return familyNameKana;
+	}
+
+	public void setFamilyNameKana(String familyNameKana){
+		this.familyNameKana = familyNameKana;
 	}
 
 	@Column(name = "ADMIN")

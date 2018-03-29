@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+	http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="r.ninomiya" id="account-customize">
+        <preConditions onFail="MARK_RAN" onFailMessage="skip accounts-customize">
+			<sqlCheck expectedResult="0">select count(*) from accounts where id='rikiya_ninomiya@unirita.co.jp';</sqlCheck>
+		</preConditions>
+        <insert tableName="ACCOUNTS">
+            <column name="ID" value="rikiya_ninomiya@unirita.co.jp" />
+            <column name="FAMILY_NAME" value="二宮" />
+            <column name="GIVEN_NAME" value="力也" />
+            <column name="FAMILY_NAME_KANA" value="ニノミヤ" />
+            <column name="GIVEN_NAME_KANA" value="リキヤ" />
+            <column name="ADMIN" valueBoolean="true" />
+        </insert>
+        <insert tableName="ACCOUNTS">
+            <column name="ID" value="masanori_asano@unirita.co.jp" />
+            <column name="FAMILY_NAME" value="浅野" />
+            <column name="GIVEN_NAME" value="雅則" />
+            <column name="FAMILY_NAME_KANA" value="アサノ" />
+            <column name="GIVEN_NAME_KANA" value="マサノリ" />
+            <column name="ADMIN" valueBoolean="true" />
+        </insert>
+        <insert tableName="ACCOUNTS">
+            <column name="ID" value="ryota_shinzato@unirita.co.jp" />
+            <column name="FAMILY_NAME" value="新里" />
+            <column name="GIVEN_NAME" value="亮太" />
+            <column name="FAMILY_NAME_KANA" value="シンザト" />
+            <column name="GIVEN_NAME_KANA" value="リョウタ" />
+            <column name="ADMIN" valueBoolean="true" />
+        </insert>
+        <insert tableName="ACCOUNTS">
+            <column name="ID" value="takahito_mori@unirita.co.jp" />
+            <column name="FAMILY_NAME" value="森" />
+            <column name="GIVEN_NAME" value="崇仁" />
+            <column name="FAMILY_NAME_KANA" value="モリ" />
+            <column name="GIVEN_NAME_KANA" value="タカヒト" />
+            <column name="ADMIN" valueBoolean="true" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>

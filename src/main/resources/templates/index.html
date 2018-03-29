@@ -16,7 +16,14 @@
     <script>
         var map = L.map('map', { crs: L.CRS.Simple });
 
-        var bounds = [[0, 0], [480, 640]]; // ここでは画像の解像度をboundsに設定する。
+        var bounds = [];
+        bounds[0] = [];
+        bounds[0][0] = 0;
+        bounds[0][1] = 0;
+        bounds[1] = [];
+        bounds[1][0] = 480;
+        bounds[1][1] = 640;
+        // ここでは画像の解像度をboundsに設定する。
         L.imageOverlay('seat.png', bounds).addTo(map); // 背景画像を設定する。
 
         // お誕生日席

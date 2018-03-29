@@ -26,4 +26,26 @@
 			</column>
 		</createTable>
 	</changeSet>
+
+	<changeSet author="r.ninomiya" id="accounts-const-v2">
+		<preConditions onFail="MARK_RAN" onFailMessage="skip accounts-const-v2">
+			<columnExists tableName="ACCOUNTS" columnName="NAME"></columnExists>
+		</preConditions>
+		<dropColumn tableName="ACCOUNTS" columnName="NAME"></dropColumn>
+		<dropColumn tableName="ACCOUNTS" columnName="PASSWORD"></dropColumn>
+		<addColumn tableName="ACCOUNTS">
+			<column name="FAMILY_NAME" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="GIVEN_NAME" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="FAMILY_NAME_KANA" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="GIVEN_NAME_KANA" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+		</addColumn>
+	</changeSet>
 </databaseChangeLog>
