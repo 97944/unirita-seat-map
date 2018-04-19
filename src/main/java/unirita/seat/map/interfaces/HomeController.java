@@ -1,14 +1,14 @@
 package unirita.seat.map.interfaces;
 
-import java.util.Optional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import unirita.seat.map.domain.account.Account;
 import unirita.seat.map.domain.account.AccountRepository;
@@ -22,10 +22,16 @@ public class HomeController {
 	AccountRepository accountRepository;
 
 	@GetMapping
-	public String home(){
+	public ModelAndView home(){
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
-		Optional<Account> account = accountRepository.findById(username);
-		logger.info("id:" + username + " 名前:" + account.get().getFamilyName() + " " + account.get().getGivenName() + " 管理者:" + account.get().getAdmin());
-		return "index";
+		Account account = accountRepository.findById(username);
+		logger.info("id:" + username + " 名前:" + account.getFamilyName() + " " + account.getGivenName() + " 管理者:" + account.getAdmin());
+		if(!account.getAdmin()){
+			throw new AccessDeniedException("");
+		}
+		ModelAndView mav = new ModelAndView("seatForm");
+		mav.addObject("user", account);
+
+		return mav;
 	}
 }

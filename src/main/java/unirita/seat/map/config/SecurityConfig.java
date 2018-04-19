@@ -3,6 +3,7 @@ package unirita.seat.map.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -16,13 +17,14 @@ import unirita.seat.map.filter.OpenIDConnectFilter;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private OAuth2RestTemplate restTemplate;
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/resources/**");
+        web.ignoring().antMatchers("/css/**","/js/**","/img/**");
     }
 
     @Bean
@@ -36,13 +38,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         // @formatter:off
         http
+        .csrf().disable()
         .addFilterAfter(new OAuth2ClientContextFilter(), AbstractPreAuthenticatedProcessingFilter.class)
         .addFilterAfter(myFilter(), OAuth2ClientContextFilter.class)
         .httpBasic().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/google-login"))
         .and()
         .authorizeRequests()
+        .antMatchers("/").permitAll()
        // .antMatchers("/","/index*").permitAll()
         .anyRequest().authenticated()
+        .and().logout().logoutSuccessUrl("/").permitAll()
         ;
 
      // @formatter:on

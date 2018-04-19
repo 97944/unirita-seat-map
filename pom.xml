@@ -12,7 +12,7 @@
 	<properties>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <packaging.type>jar</packaging.type>
-        <finalName>core</finalName>
+        <finalName>usm</finalName>
         <springBootDevXmx>128m</springBootDevXmx>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -127,6 +127,10 @@
         <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
 		</dependency>
 
 		<!-- Jackson -->

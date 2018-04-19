@@ -13,25 +13,13 @@
     <script src="/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
 </head>
 
-<body>
-    <div id="map">
-        <script src="/js/seat.js" th:src="@{/js/seat.js}"></script>
-    </div>
-
-    <div class="menu">
-        <!-- <form name="form" action=""> -->
-        <label>Column:</label>
-        <input type="text" id="column" />
-        <label>Line:</label>
-        <input type="text" id="line" />
-        <label>Start Column:</label>
-        <input type="text" id="start_column" />
-        <label>Start Line:</label>
-        <input type="text" id="start_line" />
-        <button onclick="return onCreateButtonClick();">Create!</button>
-        <!-- <button onclick="onSaveButtonClick();return false;">Save!</button> -->
-        <!-- </form> -->
-    </div>
+<body style="background-color: #eeeeee;">
+  <div id="logo-area">
+    <img class="logo" src="img/logo.png" />
+    <a class="signin-btn" href="/home" type="button">
+      <img src="img/google_signin.png" />
+    </a>
+  </div>
 </body>
 
 </html>
