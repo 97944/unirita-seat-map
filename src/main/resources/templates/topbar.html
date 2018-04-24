@@ -5,6 +5,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="navbarEexample">
             <p class="navbar-text" th:if="${user.admin}"><a href="/home" class="navbar-link">管理画面</a></p>
+            <p class="navbar-text"><a href="/seatView" class="navbar-link">閲覧画面</a></p>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown" style="top: 8px;">
 					<button class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" ><span th:text="${user.id}+ ' '"></span><span class="caret"></span></button>
