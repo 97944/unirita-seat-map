@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,9 +34,9 @@ public class FileController {
 		return readCsvLogic.getCsvData();
 	}
 
-	@GetMapping("/home/getJson")
-	public List<JsonForm> getJsonData() throws IOException {
-		return readJsonLogic.getJsonData();
+	@GetMapping("/home/getJson/{floor}")
+	public List<JsonForm> getJsonData(@PathVariable(value = "floor") String floor) throws IOException {
+		return readJsonLogic.getJsonData(floor);
 	}
 
 	@PostMapping("/home/setJson")

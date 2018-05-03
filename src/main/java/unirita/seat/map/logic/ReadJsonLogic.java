@@ -14,9 +14,9 @@ import unirita.seat.map.form.JsonForm;
 
 @Service
 public class ReadJsonLogic {
-	public List<JsonForm> getJsonData() throws IOException {
+	public List<JsonForm> getJsonData(String floor) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		JsonNode root = mapper.readTree(new File("src/main/resources/json/seatmap.json"));
+		JsonNode root = mapper.readTree(new File("src/main/resources/json/seatmap_" + floor + ".json"));
 		List<JsonForm> data = new ArrayList<>();
 		for (int i = 0; i < (root.get("seat")).size(); i++) {
 			JsonForm json = new JsonForm();

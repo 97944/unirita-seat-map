@@ -1,0 +1,25 @@
+{
+    "seat": [
+        {
+            "column": 1,
+            "line": 1,
+            "start_column": 4,
+            "start_line": 2,
+            "oc": true
+        },
+        {
+            "column": 2,
+            "line": 5,
+            "start_column": 4,
+            "start_line": 4,
+            "oc": false
+        },
+        {
+            "column": 2,
+            "line": 3,
+            "start_column": 4,
+            "start_line": 10,
+            "oc": false
+        }
+    ]
+}

@@ -12,5 +12,5 @@ public class SeatForm {
 	private int line;
 	private int start_column;
 	private int start_line;
-	private boolean half;
+	private boolean oc;
 }
