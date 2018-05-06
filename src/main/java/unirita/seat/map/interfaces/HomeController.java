@@ -26,7 +26,7 @@ public class HomeController {
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		Account account = accountRepository.findById(username);
 		logger.info("id:" + username + " 名前:" + account.getFamilyName() + " " + account.getGivenName() + " 管理者:" + account.getAdmin());
-		if(!account.getAdmin()){
+		if(account == null || !account.getAdmin()){
 			throw new AccessDeniedException("");
 		}
 		ModelAndView mav = new ModelAndView("seatForm");

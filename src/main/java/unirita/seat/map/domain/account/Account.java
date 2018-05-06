@@ -15,6 +15,17 @@ public class Account {
 	private String familyNameKana;
 	private String givenNameKana;
 	private boolean admin;
+	private String employeeNum;
+	private String division;
+	private String department;
+	private String section;
+	private String group;
+	private String position;
+	private String joinedYear;
+	private String phoneNumber;
+	private String phoneAddress;
+	private int column;
+	private int line;
 
 	@Id
 	@Column(name = "ID", unique = true, nullable = false)
@@ -71,4 +82,102 @@ public class Account {
 		this.admin = admin;
 	}
 
+	@Column(name = "EMPLOYEE_NUM", nullable = false)
+	public String getEmployeeNum(){
+		return employeeNum;
+	}
+
+	public void setEmployeeNum(String employeeNum){
+		this.employeeNum = employeeNum;
+	}
+
+	@Column(name = "DIVISION")
+	public String getDivision(){
+		return division;
+	}
+
+	public void setDivision(String division){
+		this.division = division;
+	}
+
+	@Column(name = "DEPARTMENT")
+	public String getDepartment(){
+		return department;
+	}
+
+	public void setDepartment(String department){
+		this.department = department;
+	}
+
+	@Column(name = "SECTION")
+	public String getSection(){
+		return section;
+	}
+
+	public void setSection(String section){
+		this.section = section;
+	}
+
+	@Column(name = "`GROUP`")
+	public String getGroup(){
+		return group;
+	}
+
+	public void setGroup(String group){
+		this.group = group;
+	}
+
+	@Column(name = "POSITION")
+	public String getPosition(){
+		return position;
+	}
+
+	public void setPosition(String position){
+		this.position = position;
+	}
+
+	@Column(name = "JOINED_YEAR")
+	public String getJoinedYear(){
+		return joinedYear;
+	}
+
+	public void setJoinedYear(String joinedYear){
+		this.joinedYear = joinedYear;
+	}
+
+	@Column(name = "PHONE_NUMBER")
+	public String getPhoneNumber(){
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber){
+		this.phoneNumber = phoneNumber;
+	}
+
+	@Column(name = "PHONE_ADDRESS")
+	public String getPhoneAddress(){
+		return phoneAddress;
+	}
+
+	public void setPhoneAddress(String phoneAddress){
+		this.phoneAddress = phoneAddress;
+	}
+
+	@Column(name = "`COLUMN`")
+	public int getColumn(){
+		return column;
+	}
+
+	public void setColumn(int column){
+		this.column = column;
+	}
+
+	@Column(name = "LINE")
+	public int getLine(){
+		return line;
+	}
+
+	public void setLine(int line){
+		this.line = line;
+	}
 }

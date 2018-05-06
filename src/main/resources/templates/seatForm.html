@@ -37,8 +37,23 @@
         <button onclick="return onCreateButtonClick();">Create!</button>
         <!-- <button onclick="onSaveButtonClick();return false;">Save!</button> -->
         <!-- </form> -->
-
+        <form action="/home/import" method="POST" enctype="multipart/form-data" id="import_form">
+            <label style="padding-top: 30px; padding-bottom: 10px;">Import</label>
+            <input type="file" id="csv_import" name="csv" style="padding-bottom: 10px;" accept=".csv" />
+            <button class="btn btn-primary" type="submit" id="import_btn" disabled>インポート</button>
+        </form>
     </div>
+    <script type="text/javascript">
+    window.addEventListener("load", function () {
+        $("#csv_import").on("change", function(){
+            if($(this).val() != ''){
+                $("#import_btn").attr("disabled", false);
+            } else {
+                $("#import_btn").attr("disabled", true);
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>

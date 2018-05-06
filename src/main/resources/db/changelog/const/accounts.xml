@@ -48,4 +48,25 @@
 			</column>
 		</addColumn>
 	</changeSet>
+
+	<changeSet author="r.ninomiya" id="accounts-const-v3">
+		<preConditions onFail="MARK_RAN" onFailMessage="skip accounts-const-v3">
+			<columnExists tableName="ACCOUNTS" columnName="FAMILY_NAME_KANA"></columnExists>
+		</preConditions>
+		<addColumn tableName="ACCOUNTS">
+			<column name="EMPLOYEE_NUM" type="VARCHAR(255)">
+				<constraints nullable="false" />
+			</column>
+			<column name="DIVISION" type="VARCHAR(255)"></column>
+			<column name="DEPARTMENT" type="VARCHAR(255)"></column>
+			<column name="SECTION" type="VARCHAR(255)"></column>
+			<column name="GROUP" type="VARCHAR(255)"></column>
+			<column name="POSITION" type="VARCHAR(255)"></column>
+			<column name="JOINED_YEAR" type="VARCHAR(255)"></column>
+			<column name="PHONE_NUMBER" type="VARCHAR(255)"></column>
+			<column name="PHONE_ADDRESS" type="VARCHAR(255)"></column>
+			<column name="COLUMN" type="INT"></column>
+			<column name="LINE" type="INT"></column>
+		</addColumn>
+	</changeSet>
 </databaseChangeLog>

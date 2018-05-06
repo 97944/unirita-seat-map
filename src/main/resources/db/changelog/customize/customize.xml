@@ -16,6 +16,13 @@
             <column name="FAMILY_NAME_KANA" value="ニノミヤ" />
             <column name="GIVEN_NAME_KANA" value="リキヤ" />
             <column name="ADMIN" valueBoolean="true" />
+            <column name="EMPLOYEE_NUM" value="97944"></column>
+			<column name="DIVISION" value="オープンインキュベーションセンター"></column>
+			<column name="JOINED_YEAR" value="2016"></column>
+			<column name="PHONE_NUMBER" value="080-6859-3126"></column>
+			<column name="PHONE_ADDRESS" value="ninomiya_rikiya@bsp.biz.ezweb.ne.jp"></column>
+			<column name="COLUMN" value="1"></column>
+			<column name="LINE" value="1"></column>
         </insert>
         <insert tableName="ACCOUNTS">
             <column name="ID" value="masanori_asano@unirita.co.jp" />
@@ -24,6 +31,16 @@
             <column name="FAMILY_NAME_KANA" value="アサノ" />
             <column name="GIVEN_NAME_KANA" value="マサノリ" />
             <column name="ADMIN" valueBoolean="true" />
+            <column name="EMPLOYEE_NUM" value="97958"></column>
+			<column name="DIVISION" value="ビジネスイノベーション事業本部"></column>
+			<column name="DEPARTMENT" value="プロダクト開発部"></column>
+			<column name="SECTION" value="開発グループ"></column>
+			<column name="GROUP" value="A-AUTOグループ"></column>
+			<column name="JOINED_YEAR" value="2017"></column>
+			<column name="PHONE_NUMBER" value="080-6816-9482"></column>
+			<column name="PHONE_ADDRESS" value="asanomasanori@bsp.biz.ezweb.ne.jp"></column>
+			<column name="COLUMN" value="1"></column>
+			<column name="LINE" value="2"></column>
         </insert>
         <insert tableName="ACCOUNTS">
             <column name="ID" value="ryota_shinzato@unirita.co.jp" />
@@ -32,6 +49,15 @@
             <column name="FAMILY_NAME_KANA" value="シンザト" />
             <column name="GIVEN_NAME_KANA" value="リョウタ" />
             <column name="ADMIN" valueBoolean="true" />
+            <column name="EMPLOYEE_NUM" value="97965"></column>
+			<column name="DIVISION" value="ビジネスイノベーション事業本部"></column>
+			<column name="DEPARTMENT" value="ビジネスフォース部"></column>
+			<column name="SECTION" value="ビジネスSaaSグループ"></column>
+			<column name="JOINED_YEAR" value="2017"></column>
+			<column name="PHONE_NUMBER" value="080-6816-9521"></column>
+			<column name="PHONE_ADDRESS" value="shinzatoryota@bsp.biz.ezweb.ne.jp"></column>
+			<column name="COLUMN" value="1"></column>
+			<column name="LINE" value="3"></column>
         </insert>
         <insert tableName="ACCOUNTS">
             <column name="ID" value="takahito_mori@unirita.co.jp" />
@@ -40,6 +66,16 @@
             <column name="FAMILY_NAME_KANA" value="モリ" />
             <column name="GIVEN_NAME_KANA" value="タカヒト" />
             <column name="ADMIN" valueBoolean="true" />
+            <column name="EMPLOYEE_NUM" value="97945"></column>
+			<column name="DIVISION" value="ビジネスイノベーション事業本部"></column>
+			<column name="DEPARTMENT" value="プロダクト開発部"></column>
+			<column name="SECTION" value="開発グループ"></column>
+			<column name="GROUP" value="帳票グループ"></column>
+			<column name="JOINED_YEAR" value="2016"></column>
+			<column name="PHONE_NUMBER" value="080-6859-3127"></column>
+			<column name="PHONE_ADDRESS" value="mori_takahito@bsp.biz.ezweb.ne.jp"></column>
+			<column name="COLUMN" value="1"></column>
+			<column name="LINE" value="4"></column>
         </insert>
     </changeSet>
 </databaseChangeLog>
