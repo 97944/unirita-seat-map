@@ -34,7 +34,7 @@ public class JsonForm {
 		return start_column;
 	}
 
-	public void setStrat_column(int start_column){
+	public void setStart_column(int start_column){
 		this.start_column = start_column;
 	}
 

@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,6 +32,8 @@ import unirita.seat.map.form.CsvForm;
 import unirita.seat.map.form.JsonForm;
 import unirita.seat.map.form.SeatDTO;
 import unirita.seat.map.form.SeatForm;
+import unirita.seat.map.logic.Member;
+import unirita.seat.map.logic.MemberList;
 import unirita.seat.map.logic.ReadCsvLogic;
 import unirita.seat.map.logic.ReadJsonLogic;
 import unirita.seat.map.logic.WriteJsonLogic;
@@ -61,6 +65,14 @@ public class FileController {
 			@RequestBody List<SeatForm> form) throws JsonProcessingException {
 		writeJsonLogic.setJsonData(form);
 	}
+
+	@RequestMapping(path = "home/home")
+	@ResponseBody
+	public  List<Member> memberList() {
+		MemberList ml = new MemberList();
+		ArrayList<Member> mlist = ml.getMemberList();
+		return mlist;
+    }
 
 	@PostMapping("/home/import")
 	public ModelAndView csvImport(@RequestParam("csv")MultipartFile file) throws IOException, CsvException{

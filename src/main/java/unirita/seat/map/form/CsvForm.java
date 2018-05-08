@@ -34,7 +34,7 @@ public class CsvForm {
 		return number;
 	}
 
-	public void getNumber(String number){
+	public void setNumber(String number){
 		this.number = number;
 	}
 
